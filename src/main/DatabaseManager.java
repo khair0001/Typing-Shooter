@@ -4,9 +4,8 @@ import java.util.List;
 
 public class DatabaseManager {
     private static final String URL = "jdbc:mysql://localhost:3306/typing_shooter";
-    private static final String USER = "root"; // Sesuaikan dengan username MySQL Anda
-    private static final String PASSWORD = ""; // Sesuaikan dengan password MySQL Anda
-
+    private static final String USER = "root";
+    private static final String PASSWORD = ""; 
     private Connection connection;
 
     public DatabaseManager() {
