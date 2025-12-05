@@ -1,6 +1,7 @@
 public final class AssetPath {
     private AssetPath() {
     }
+
     // BACKGROUNDS
     public static final String BG_MENU_AWAL = "assets/images/backgrounds/menuawal.png";
     public static final String BG_GAME = "assets/images/backgrounds/gamebg.png";
@@ -15,7 +16,11 @@ public final class AssetPath {
     public static final String UI_GAMEOVER_TITLE = "assets/images/ui/gameover.png";
     public static final String UI_RETRY = "assets/images/ui/retry.png";
     public static final String UI_BACK_TO_MENU = "assets/images/ui/backmenu.png";
-    
+
+    // PLAYER ASSETS di game panel
+    public static final String PLAYER_IDLE = "assets/images/characters/diam.png";
+    public static final String PLAYER_SHOOT = "assets/images/characters/tembak.png";
+    public static final String PLAYER_ULTI = "assets/images/characters/ulti.png";
     public static final String PLAYER_LIFE_HEART = "assets/images/characters/life.png";
 
     // Player Idle Animation (4 frames)
@@ -41,6 +46,15 @@ public final class AssetPath {
     public static final String PLAYER_DEAD_02 = "assets/images/characters/dead2.png";
     public static final String PLAYER_DEAD_03 = "assets/images/characters/dead3.png";
     public static final String PLAYER_DEAD_04 = "assets/images/characters/dead4.png";
+
+    // ENEMY ASSETS di game panel
+    // public static final String ENEMY_WALK_LEFT =
+    // "assets/images/enemies/jalanKiri.png";
+    // public static final String ENEMY_WALK_RIGHT =
+    // "assets/images/enemies/jalanKanan.png";
+    // public static final String ENEMY_NORMAL =
+    // "assets/images/enemies/tertembak.png";
+    public static final String ENEMY_EXPLODE = "assets/images/enemies/meledak.png";
 
     public static final String ENEMY_WALK_01 = "assets/images/enemies/idle1.png";
     public static final String ENEMY_WALK_02 = "assets/images/enemies/idle2.png";
