@@ -15,7 +15,6 @@ public class DatabaseManager {
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
             System.out.println("Database connected successfully!");
 
-            // Test query to ensure the scores table exists
             try (Statement stmt = connection.createStatement()) {
                 stmt.executeQuery("SELECT 1 FROM scores LIMIT 1");
                 System.out.println("Scores table is accessible");
@@ -29,9 +28,6 @@ public class DatabaseManager {
         }
     }
 
-    /**
-     * Menutup koneksi database
-     */
     public void closeConnection() {
         try {
             if (connection != null && !connection.isClosed()) {
@@ -43,9 +39,6 @@ public class DatabaseManager {
         }
     }
 
-    /**
-     * Menyimpan score ke database
-     */
     public boolean insertScore(String username, int score) {
         String query = "INSERT INTO scores (username, score, timestamp) VALUES (?, ?, NOW())";
 
@@ -62,9 +55,6 @@ public class DatabaseManager {
         }
     }
 
-    /**
-     * Mengambil 10 score tertinggi dari database
-     */
     public List<ScoreEntry> getTop10Scores() {
         List<ScoreEntry> scores = new ArrayList<>();
         String query = "SELECT username, score, timestamp FROM scores ORDER BY score DESC LIMIT 10";
@@ -87,9 +77,6 @@ public class DatabaseManager {
         return scores;
     }
 
-    /**
-     * Mengecek apakah score masuk top 10
-     */
     public boolean isTop10Score(int score) {
         String query = "SELECT COUNT(*) as total FROM scores WHERE score > ?";
 
@@ -109,9 +96,6 @@ public class DatabaseManager {
         return false;
     }
 
-    /**
-     * Mengambil soal berdasarkan kesulitan
-     */
     public List<String> getSoalByKesulitan(String kesulitan) {
         List<String> soalList = new ArrayList<>();
         String query = "SELECT data FROM soal WHERE kesulitan = ?";
@@ -122,7 +106,6 @@ public class DatabaseManager {
 
             while (rs.next()) {
                 String data = rs.getString("data");
-                // Split data dengan koma
                 String[] words = data.split(",\\s*");
                 for (String word : words) {
                     if (!word.trim().isEmpty()) {
@@ -138,9 +121,6 @@ public class DatabaseManager {
         return soalList;
     }
 
-    /**
-     * Class untuk menyimpan data score
-     */
     public static class ScoreEntry {
         public String username;
         public int score;
